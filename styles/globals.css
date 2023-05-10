@@ -26,7 +26,7 @@ body {
 
 .center {
   grid-column: 2 / 3;
-  background:black;
+  background:rgb(216, 215, 215);
 
 
 }
@@ -39,12 +39,12 @@ body {
 
 .top {
   position: absolute;
-  top: 50px; /* Adjust this value to position the element */
+  top: 30px; /* Adjust this value to position the element */
   left: -88px;
   right: 0;
   margin: auto;
-  width: 53%; /* Adjust this value to set the width of the element */
-  height: 90%; /* Adjust this value to set the height of the element */
+  width: 59%; /* Adjust this value to set the width of the element */
+  height: 93%; /* Adjust this value to set the height of the element */
   background-color: #e00f0f; /* Set the background color of the element */
   border-radius: 10px; /* Set the border radius of the element */
   box-shadow: 0 0 10px rgba(37, 30, 30, 0.2); /* Set the box shadow of the element */
