@@ -3,6 +3,7 @@ import AboutMe from '../components/AboutMe'
 import Resume from '../components/Resume'
 import Projects from '../components/Projects'
 import ContactMe from '../components/ContactMe'
+import NavBar from '../components/NavBar'
 
 // Create the context
 const SelectedComponentContext = React.createContext(null);
@@ -21,12 +22,13 @@ function Home() {
       <div className='container'>
         <div className='top'>
           <div className='left'>
-            <ul>
+            <NavBar />
+            {/* <ul>
               <li onClick={() => handleItemClick('AboutMe')}>About Me</li>
               <li onClick={() => handleItemClick('Resume')}>Resume</li>
               <li onClick={() => handleItemClick('Projects')}>Projects</li>
               <li onClick={() => handleItemClick('ContactMe')}>Contact Me</li>
-            </ul>
+            </ul> */}
           </div>
           <div className='center'>
             {selectedComponent === 'AboutMe' && <AboutMe />}

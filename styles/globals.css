@@ -53,3 +53,9 @@ body {
   grid-template-columns: 1fr 5fr;
   grid-gap: 20px;
 }
+
+.nav-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
