@@ -4,7 +4,7 @@ import Resume from '../components/Resume'
 import Projects from '../components/Projects'
 import ContactMe from '../components/ContactMe'
 import NavBar from '../components/NavBar'
-import NavProvider from '../contexts/nav-context';
+import { NavProvider } from '../contexts/nav-context';
 
 
 

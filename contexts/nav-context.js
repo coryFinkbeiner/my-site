@@ -20,3 +20,4 @@ export function NavProvider({ children }) {
 
   return <NavContext.Provider value={value}>{children}</NavContext.Provider>;
 }
+
