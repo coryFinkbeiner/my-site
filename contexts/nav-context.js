@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from 'react';
 
-const NavContext = createContext();
+const NavContext = createContext(null);
 
 export function useNav() {
   return useContext(NavContext);
