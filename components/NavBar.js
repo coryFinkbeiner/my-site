@@ -1,32 +1,17 @@
-import React from 'react'
-
-const navNames = ['About', 'Resume', 'Projects', 'Contact']
-
-const handleItemClick = (componentName) => {
-  setSelectedComponent(componentName);
-};
-
-
-const navButton = name => (
-
-  <div
-    className='nav-btn'
-    onClick={() => handleItemClick({name})}
-  >
-    {name}
-  </div>
-
-)
+import React from 'react';
+import { useNav } from '../contexts/nav-context';
 
 function NavBar() {
+  const { handleItemClick } = useNav();
 
   return (
-    <div className='nav-bar'>
-      {navNames.map(name => {
-        return navButton(name)
-      })}
-    </div>
-  )
+    <ul>
+      <li onClick={() => handleItemClick('AboutMe')}>About Me</li>
+      <li onClick={() => handleItemClick('Resume')}>Resume</li>
+      <li onClick={() => handleItemClick('Projects')}>Projects</li>
+      <li onClick={() => handleItemClick('ContactMe')}>Contact Me</li>
+    </ul>
+  );
 }
 
-export default NavBar
+export default NavBar;

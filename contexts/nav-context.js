@@ -11,6 +11,7 @@ export function NavProvider({ children }) {
 
   const handleItemClick = (component) => {
     setNavOption(component);
+    console.log({component})
   };
 
   const value = {

@@ -19,7 +19,7 @@ function Home() {
       <div className='container'>
         <div className='top'>
           <div className='left'>
-            {/* <NavBar /> */}
+            <NavBar />
 
           </div>
           <div className='center'>
