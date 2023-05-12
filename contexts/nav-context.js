@@ -24,6 +24,7 @@ export function NavProvider({ children }) {
 
   const handleItemClick = (componentName) => {
     setNavOption(componentName);
+    // console.log({navChoice})
   };
 
   const value = {
