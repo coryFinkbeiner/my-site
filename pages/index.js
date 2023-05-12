@@ -1,21 +1,17 @@
-import React, { useState } from 'react';
-import AboutMe from '../components/AboutMe'
-import Resume from '../components/Resume'
-import Projects from '../components/Projects'
-import ContactMe from '../components/ContactMe'
+import React from 'react';
 import NavBar from '../components/NavBar'
-import { NavProvider } from '../contexts/nav-context';
+import { useNav } from '../contexts/nav-context';
 
 
 
 
 function Home() {
 
-
+  const { navChoice } = useNav()
 
 
   return (
-    <NavProvider>
+
       <div className='container'>
         <div className='top'>
           <div className='left'>
@@ -27,7 +23,7 @@ function Home() {
           </div>
         </div>
       </div>
-    </NavProvider>
+
   );
 }
 

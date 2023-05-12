@@ -6,10 +6,10 @@ function NavBar() {
 
   return (
     <ul>
-      <li onClick={() => handleItemClick('AboutMe')}>About Me</li>
-      <li onClick={() => handleItemClick('Resume')}>Resume</li>
-      <li onClick={() => handleItemClick('Projects')}>Projects</li>
-      <li onClick={() => handleItemClick('ContactMe')}>Contact Me</li>
+      <li onClick={() => handleItemClick('About')}>A</li>
+      <li onClick={() => handleItemClick('Resume')}>R</li>
+      <li onClick={() => handleItemClick('Projects')}>P</li>
+      <li onClick={() => handleItemClick('Contact')}>C</li>
     </ul>
   );
 }
