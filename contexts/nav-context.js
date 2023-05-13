@@ -10,20 +10,24 @@ export function useNav() {
   return useContext(NavContext);
 }
 
+const componentMap = {
+  About: About,
+  Resume: Resume,
+  Projects: Projects,
+  Contact: Contact
+};
+
 export function NavProvider({ children }) {
   const [navOption, setNavOption] = useState('About');
+  const [navChoice, setNavChoice] = useState()
 
-  const componentMap = {
-    About,
-    Resume,
-    Projects,
-    Contact
-  };
 
-  const navChoice = componentMap[navOption];
+
+  // const navChoice = componentMap[navOption];
 
   const handleItemClick = (componentName) => {
-    setNavOption(componentName);
+    // setNavOption(componentName);
+    setNavChoice(componentMap[componentName]);
     // console.log({navChoice})
   };
 

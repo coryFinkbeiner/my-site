@@ -10,7 +10,7 @@ import { NavProvider, useNav } from '../contexts/nav-context';
 function Home() {
 
   const { navChoice } = useNav()
-  // console.log({value})
+  console.log({navChoice})
 
 
   return (
@@ -22,7 +22,7 @@ function Home() {
 
           </div>
           <div className='center'>
-
+            {navChoice && <navChoice />}
           </div>
         </div>
       </div>
