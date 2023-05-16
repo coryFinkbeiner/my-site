@@ -2,15 +2,21 @@ import React from 'react';
 import NavBar from '../components/NavBar'
 // import { useNav } from '../contexts/nav-context';
 
+import About from '../components/About';
+import Resume from '../components/Resume';
+import Projects from '../components/Projects';
+import Contact from '../components/Contact';
+
 import { NavProvider, useNav } from '../contexts/nav-context';
+
 
 
 
 
 function Home() {
 
-  const { navChoice } = useNav()
-  console.log({navChoice})
+  const { selectedComponent } = useNav()
+  // console.log({selectedComponent})
 
 
   return (
@@ -22,7 +28,7 @@ function Home() {
 
           </div>
           <div className='center'>
-            {navChoice && <navChoice />}
+            {selectedComponent}
           </div>
         </div>
       </div>
