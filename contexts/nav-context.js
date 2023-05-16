@@ -18,7 +18,7 @@ const componentMap = {
 };
 
 export function NavProvider({ children }) {
-  const [navOption, setNavOption] = useState('About');
+  // const [navOption, setNavOption] = useState('About');
   const [navChoice, setNavChoice] = useState()
 
 
@@ -28,7 +28,7 @@ export function NavProvider({ children }) {
   const handleItemClick = (componentName) => {
     // setNavOption(componentName);
     setNavChoice(componentMap[componentName]);
-    // console.log({navChoice})
+    console.log({navChoice})
   };
 
   const value = {
