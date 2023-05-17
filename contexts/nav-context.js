@@ -15,7 +15,7 @@ export function NavProvider({ children }) {
 
   const handleItemClick = (componentName) => {
     setSelectedComponent(componentName);
-    console.log(selectedComponent)
+    // console.log(selectedComponent)
 
   };
 
@@ -27,3 +27,38 @@ export function NavProvider({ children }) {
   return <NavContext.Provider value={value}>{children}</NavContext.Provider>;
 }
 
+
+
+
+
+
+
+
+
+// // Assuming you have a string called `componentName` that determines which component to render
+// const componentName = 'About';
+
+// const renderComponent = (name) => {
+//   switch (name) {
+//     case 'About':
+//       return <About />;
+//     case 'Resume':
+//       return <Resume />;
+//     case 'Projects':
+//       return <Projects />;
+//     case 'Contact':
+//       return <Contact />;
+//     default:
+//       return null; // Render default component or handle unknown component case
+//   }
+// };
+
+// // Usage example:
+// const MyComponent = () => {
+//   return (
+//     <div>
+//       {/* Pass the `componentName` string to the renderComponent function */}
+//       {renderComponent(componentName)}
+//     </div>
+//   );
+// };

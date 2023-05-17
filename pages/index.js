@@ -16,7 +16,7 @@ import { NavProvider, useNav } from '../contexts/nav-context';
 function Home() {
 
   const { selectedComponent } = useNav()
-  // console.log({selectedComponent})
+  console.log(selectedComponent)
 
 
   return (
