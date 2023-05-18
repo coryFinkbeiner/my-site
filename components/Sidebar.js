@@ -9,9 +9,6 @@ const Sidebar = () => {
           <Link href="/">Home</Link>
         </li>
         <li>
-          <Link href="/About">About</Link>
-        </li>
-        <li>
           <Link href="/Resume">Resume</Link>
         </li>
         <li>
@@ -26,3 +23,4 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+

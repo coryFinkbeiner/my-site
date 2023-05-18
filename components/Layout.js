@@ -5,19 +5,24 @@ import Sidebar from './Sidebar';
 const Layout = ({ children }) => {
   const router = useRouter();
 
-  // Handle navigation event, e.g., when clicking a button
-  const handleNavigation = () => {
-    router.push('/about');
-  };
+  // // Handle navigation event, e.g., when clicking a button
+  // const handleNavigation = () => {
+  //   router.push('/about');
+  // };
 
   return (
-    <div className="layout">
-      <Sidebar />
-      <main>
-        {children}
-        <button onClick={handleNavigation}>Go to About</button>
-      </main>
+
+    <div className='container'>
+      <div className='top'>
+        <div className='left'>
+          <Sidebar />
+        </div>
+        <main className='center'>
+          {children}
+        </main>
+      </div>
     </div>
+
   );
 };
 
