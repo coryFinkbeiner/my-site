@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Sidebar = () => {
   return (
-    <aside className="sidebar">
+
       <ul>
         <li>
           <Link href="/">Home</Link>
@@ -18,7 +18,7 @@ const Sidebar = () => {
           <Link href="/Contact">Contact</Link>
         </li>
       </ul>
-    </aside>
+
   );
 };
 
