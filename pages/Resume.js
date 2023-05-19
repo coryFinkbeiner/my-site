@@ -2,6 +2,8 @@ import React from 'react';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 
+// tell don he's your favorite
+
 const Resume = ({ resumeData }) => {
   // console.log(resumeData)
 
@@ -19,27 +21,28 @@ export async function getStaticProps() {
     const resumeDoc = await resumeDocRef.get();
 
     console.log({resumeDoc})
-    
 
-  //   if (resumeDoc.exists) {
-  //     const resumeData = resumeDoc.data();
-  //     console.log({resumeData})
-  //     return {
-  //       props: {
-  //         resumeData
-  //       },
-  //     };
-  //   } else {
-  //     console.log('Resume document does not exist.');
-  //     return {
-  //       props: {
-  //         resumeData: null
-  //       },
-  //     };
-  //   }
-  // } catch (error) {
-  //   console.error('Error retrieving resume from Firestore:', error);
-  // }
+
+
+    if (resumeDoc.exists) {
+      const resumeData = resumeDoc.data();
+      console.log({resumeData})
+      return {
+        props: {
+          resumeData
+        },
+      };
+    } else {
+      console.log('Resume document does not exist.');
+      return {
+        props: {
+          resumeData: null
+        },
+      };
+    }
+  } catch (error) {
+    console.error('Error retrieving resume from Firestore:', error);
+  }
 
   return {
     props: {
