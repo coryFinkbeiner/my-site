@@ -16,11 +16,9 @@ function MyApp({ Component, pageProps, portfolioData }) {
   );
 }
 
-
-
 export async function getStaticProps() {
   const collectionRef = collection(db, 'portfolio');
-  const querySnapshot = await getDocs(collectionRef);
+  const querySnapshot = await getDoc(collectionRef);
 
   console.log({querySnapshot, collectionRef})
 
@@ -37,9 +35,5 @@ export async function getStaticProps() {
     },
   };
 }
-
-
-
-
 
 export default MyApp;
