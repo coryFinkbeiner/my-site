@@ -3,11 +3,11 @@ import '../styles/globals.css';
 import { useRouter } from 'next/router';
 import Layout from '../components/Layout';
 import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../firebase';
+import db from '../firebase';
 
-function MyApp({ Component, pageProps, portfolioData }) {
+function MyApp({ Component, pageProps }) {
   const router = useRouter();
-  console.log(pageProps.portfolioData);
+  // console.log(pageProps.portfolioData);
 
   return (
     <Layout>
@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps, portfolioData }) {
 
 export async function getStaticProps() {
   const collectionRef = collection(db, 'portfolio');
-  const querySnapshot = await getDoc(collectionRef);
+  const querySnapshot = await getDocs(collectionRef);
 
   console.log({querySnapshot, collectionRef})
 
