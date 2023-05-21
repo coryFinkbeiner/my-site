@@ -5,9 +5,9 @@ import Layout from '../components/Layout';
 import { collection, getDocs } from 'firebase/firestore';
 import db from '../firebase';
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, document }) {
   const router = useRouter();
-  // console.log(pageProps.portfolioData);
+  console.log('pp', document);
 
   return (
     <Layout>
@@ -16,24 +16,37 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
+
 export async function getStaticProps() {
-  const collectionRef = collection(db, 'portfolio');
-  const querySnapshot = await getDocs(collectionRef);
+  try {
+    // Fetch the document from Firestore
+    const collectionRef = collection(db, 'portfolio');
+    const querySnapshot = await getDocs(collectionRef);
 
-  console.log({querySnapshot, collectionRef})
+    // Check if there are any documents
+    if (querySnapshot.empty) {
+      throw new Error('No documents found in the "portfolio" collection.');
+    }
 
-  const data = [];
-  querySnapshot.forEach((doc) => {
-    data.push(doc.data());
-  });
+    // Extract the first document from the query result
+    const [firstDocument] = querySnapshot.docs;
+    const documentData = firstDocument.data();
 
-  console.log({data})
+    console.log('in', documentData)
 
-  return {
-    props: {
-      portfolioData: data,
-    },
-  };
+    return {
+      props: {
+        document: documentData,
+      },
+    };
+  } catch (error) {
+    console.error(error);
+    return {
+      props: {
+        document: null, // Set a default value or handle the error case as needed
+      },
+    };
+  }
 }
 
 export default MyApp;
