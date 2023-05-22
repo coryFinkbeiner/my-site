@@ -17,35 +17,35 @@ function MyApp({ Component, pageProps}) {
 }
 
 
-export async function getStaticProps() {
-  try {
-    // Fetch the document from Firestore
-    const collectionRef = collection(db, 'portfolio');
-    const querySnapshot = await getDocs(collectionRef);
+// export async function getStaticProps() {
+//   try {
+//     // Fetch the document from Firestore
+//     const collectionRef = collection(db, 'portfolio');
+//     const querySnapshot = await getDocs(collectionRef);
 
-    // Check if there are any documents
-    if (querySnapshot.empty) {
-      throw new Error('No documents found in the "portfolio" collection.');
-    }
+//     // Check if there are any documents
+//     if (querySnapshot.empty) {
+//       throw new Error('No documents found in the "portfolio" collection.');
+//     }
 
-    // Extract the first document from the query result
-    const [firstDocument] = querySnapshot.docs;
-    const documentData = firstDocument.data();
+//     // Extract the first document from the query result
+//     const [firstDocument] = querySnapshot.docs;
+//     const documentData = firstDocument.data();
 
 
-    return {
-      props: {
-        document: documentData,
-      },
-    };
-  } catch (error) {
-    console.error(error);
-    return {
-      props: {
-        document: null,
-      },
-    };
-  }
-}
+//     return {
+//       props: {
+//         document: documentData,
+//       },
+//     };
+//   } catch (error) {
+//     console.error(error);
+//     return {
+//       props: {
+//         document: null,
+//       },
+//     };
+//   }
+// }
 
 export default MyApp;
