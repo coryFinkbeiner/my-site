@@ -5,9 +5,9 @@ import Layout from '../components/Layout';
 import { collection, getDocs } from 'firebase/firestore';
 import db from '../firebase';
 
-function MyApp({ Component, pageProps, document }) {
+function MyApp({ Component, pageProps}) {
   const router = useRouter();
-  console.log('pp', document);
+  // console.log('pageProps:', props);
 
   return (
     <Layout>
@@ -32,7 +32,6 @@ export async function getStaticProps() {
     const [firstDocument] = querySnapshot.docs;
     const documentData = firstDocument.data();
 
-    console.log('in', documentData)
 
     return {
       props: {
@@ -43,7 +42,7 @@ export async function getStaticProps() {
     console.error(error);
     return {
       props: {
-        document: null, // Set a default value or handle the error case as needed
+        document: null,
       },
     };
   }
