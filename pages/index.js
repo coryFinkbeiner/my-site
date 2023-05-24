@@ -1,9 +1,13 @@
 import React from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import db from '../firebase';
+import { useData } from '../contexts/DataContext';
 
-function Home({ ...pageProps }) {
-  // console.log({pageProps});
+function Home() {
+  const data = useData();
+
+
+  console.log('Home', data)
 
   return (
     <div>
