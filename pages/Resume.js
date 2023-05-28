@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getStorage, ref, getDownloadURL } from 'firebase/storage';
 
-
-
 function Resume() {
   const [resumeURL, setResumeURL] = useState(null);
 
@@ -21,15 +19,15 @@ function Resume() {
 
   return (
     <div>
-      <h1>Resume</h1>
       {resumeURL ? (
         <div>
           <style>{`
             #sidebarToggle, .toolbarButton.pageUp, .toolbarButton.pageDown {
               display: none !important;
             }
+            { border: 'none' }
           `}</style>
-          <iframe src={resumeURL} title="Resume" width="100%" height="600px" />
+          <iframe src={resumeURL} title="Resume" width="100%" height="950px" />
         </div>
       ) : (
         <p>Loading resume...</p>
@@ -40,7 +38,3 @@ function Resume() {
 
 export default Resume;
 
-// change to image instead of pdf file.
-// add link to pdf as well.
-
-// default view is
