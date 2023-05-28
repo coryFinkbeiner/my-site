@@ -1,19 +1,16 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import Sidebar from './Sidebar';
+import Header from './Header';
 
 const Layout = ({ children }) => {
   const router = useRouter();
-
-  // // Handle navigation event, e.g., when clicking a button
-  // const handleNavigation = () => {
-  //   router.push('/about');
-  // };
 
   return (
 
     <div className='container'>
       <div className='top'>
+        <Header />
         <div className='left'>
           <Sidebar />
         </div>
